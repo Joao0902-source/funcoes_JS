@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Calculando IMC do usuário</title>
+<head>
+     CÁLCULO DO IMC 
+    <script type="text/javascript">
+    function CalculoImc(){                
+    var peso = parseFloat(document.formImc.peso.value); 
+    var altura = parseFloat(document.formImc.altura.value);
+    var imc = peso/(altura*altura);
+    document.formImc.resultado.value = imc.toFixed(2);
+    return false;
+        
+    }
+      
+    </script>
+
+
+<html>
+
+
+
+</head>
+<body>
+
+<form name="formImc"  method="POST" onsubmit="return CalculoImc();">
+
+<p>Peso: <input type="text" name="peso" size="5"></p>
+<p>Altura: <input type="text" name="altura" size="4.5"></p>
+<p><input type="submit" value="Calcular" class="calcula">
+<input type="reset" value="Limpar" class="limpa"></p>
+<p>Resultado:<input type="text" name="resultado" size="5" class="result"></p>
+
+</form>
+<table border="3"> 
+
+<tr class="tr1"> 
+
+<td>Menor que 18.5 </td> 
+
+<td> MAGREZA </td>
+
+
+
+</tr> 
+
+<tr class="tr2"> 
+
+<td> Entre 18.5 e 24.9</td>
+
+<td>NORMAL</td>
+
+
+
+</tr> 
+
+<tr class="tr3"> 
+
+    <td> Entre 25.0 e 29.9</td>
+    
+    <td>SOBREPESO  </td>
+    
+    
+    
+    </tr> 
+    <tr class="tr4"> 
+
+        <td>Entre 30.0 e 39.9 </td>
+        
+        <td>OBESIDADE</td>
+        
+        
+        
+        </tr>
+
+        <tr class="tr5"> 
+
+            <td> Maior que 40.0</td>
+            
+            <td>OBESIDADE GRAVE </td>
+            
+            
+            
+            </tr> 
+
+</TABLE> 
+
+	
+</body>
+</html>
+
+<style>
+    form p{
+        font-weight: bold;
+    }
+    
+   form{
+       font-family: Arial, Helvetica, sans-serif;
+   }
+    .result{
+        font-weight: bold;
+    }
+
+    .calcula{
+        width: 100px;
+        height: 30px;
+        font-weight: bold;
+        background-color: rgb(74, 110, 158);
+        color: white;
+        cursor: pointer;
+    }
+.limpa{
+    width: 100px;
+        height: 30px;
+        font-weight: bold;
+        background-color: rgb(235, 43, 43);
+        color: white;
+        cursor: pointer;
+
+}
+    table{
+        background-color: rgb(221, 221, 221);
+    }
+.tr1 td{
+    background-color:lime;
+    font-weight:bold;
+}
+.tr2 td {
+    font-weight: bold;
+    background-color: yellow;
+}
+.tr3 td{
+    background-color:rgb(250, 37, 0);
+    font-weight:bold;
+}
+.tr4 td {
+    font-weight: bold;
+    background-color: rgb(219, 9, 9);
+}
+.tr5 td {
+    font-weight: bold;
+    background-color: rgb(148, 0, 0);
+}
+</style>

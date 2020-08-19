@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<title>Calculando nota do aluno</title>
+<meta charset="UTF-8">
+<html>
+
+
+<head> <strong>Cálculo da nota</strong>
+<script type="text/javascript">
+function CalculoImc(){                
+var nota1 = parseFloat(document.notas.nota1.value); 
+var nota2 = parseFloat(document.notas.nota2.value);
+var nota3 = parseFloat(document.notas.nota3.value);
+
+var mencaofinal = (nota1+nota2+nota3)/3;
+document.notas.mfinal.value = mencaofinal.toFixed(2);
+return false;
+	
+}
+function CalculaFreq(){                
+var dletivos = parseFloat(document.frequencia.dletivos.value); 
+var dfrequentados = parseFloat(document.frequencia.dfrequentados.value);
+
+
+var frequencia = (dfrequentados*100)/20;
+document.frequencia.frequencia.value = frequencia.toFixed(2);
+return false;
+	
+}
+
+
+  
+</script>
+</head>
+<body>
+
+<form name="notas"  method="POST" onsubmit="return CalculoImc();">
+    <p>Nome: <input type="text" name="nome" ></p>
+
+<p>Nota 1: <input type="text" name="nota1" size="2"></p>
+<p>Nota 2: <input type="text" name="nota2" size="2"></p>
+<p>Nota 3: <input type="text" name="nota3" size="2"></p>
+
+<p><input type="submit" value="Calcular" class="calcula">
+    
+
+<input type="reset" value="Limpar" class="limpa"></p>
+<p>Menção final:<input type="text" name="mfinal" size="5" class="mfinal"></p>
+
+</form>
+
+<strong>Cálculo da frequência</strong>
+<form name="frequencia"  method="POST" onsubmit="return CalculaFreq();">
+
+<p>Numero dias letivos: <input type="text" name="dletivos" size="2"></p>
+<p>Numero dias frequentados: <input type="text" name="dfrequentados" size="2"></p>
+<p>Frequencia: <input type="text" name="frequencia" size="2" >%</p>
+
+
+<p><input type="submit" value="Calcular" class="calcula">
+    
+
+<input type="reset" value="Limpar" class="limpa"></p>
+
+<p><input type="submit" value="Enviar registro" name="enviar">
+
+
+</form>
+
+
+
+
+
+
+
+<style>
+     form p{
+        font-weight: bold;
+    }
+    
+   form{
+       font-family: Arial, Helvetica, sans-serif;
+   }
+    .mfinal{
+        font-weight: bold;
+    }
+
+    .calcula{
+        width: 100px;
+        height: 30px;
+        font-weight: bold;
+        background-color: rgb(74, 110, 158);
+        color: white;
+        cursor: pointer;
+    }
+.limpa{
+    width: 100px;
+        height: 30px;
+        font-weight: bold;
+        background-color: rgb(235, 43, 43);
+        color: white;
+        cursor: pointer;
+
+}
+</style>
